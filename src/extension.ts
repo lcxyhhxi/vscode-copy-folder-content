@@ -60,21 +60,21 @@ async function copyFolderContentRecursively(folder: vscode.Uri, withoutComments:
     const fileCount = await countFiles(folder.fsPath)
     if (fileCount > 1000) {
       const shouldContinue = await vscode.window.showWarningMessage(
-        `The folder contains more than 1000 files (${fileCount} files). Do you want to continue?`,
-        'Yes',
-        'No',
+        `该文件夹包含超过1000个文件(共${fileCount}个文件)。是否继续?`,
+        '是',
+        '否',
       )
-      if (shouldContinue !== 'Yes')
+      if (shouldContinue !== '是')
         return
     }
     filesCollection = []
     await copyFolderRecursive(folder.fsPath, withoutComments)
     const content = await copyContent(filesCollection, withoutComments)
     await vscode.env.clipboard.writeText(content)
-    vscode.window.setStatusBarMessage(`Recursive folder content copied to clipboard${withoutComments ? ' without comments' : ''}!`, 5000)
+    vscode.window.setStatusBarMessage(`已成功将文件夹内容${withoutComments ? '(不含注释)' : ''}复制到剪贴板!`, 5000)
   }
   catch (err) {
-    vscode.window.showErrorMessage('Could not read folder recursively')
+    vscode.window.showErrorMessage('无法递归读取文件夹')
   }
 }
 
@@ -122,10 +122,10 @@ async function copyFolderContentRecursivelyByType(folder: vscode.Uri) {
 
     const content = await copyContent(filesCollection)
     await vscode.env.clipboard.writeText(content)
-    vscode.window.setStatusBarMessage(`Folder content with file extensions ${selectedExtensions.join(', ')} copied to clipboard!`, 5000)
+    vscode.window.setStatusBarMessage(`已成功将文件扩展名为 ${selectedExtensions.join(', ')} 的文件夹内容复制到剪贴板!`, 5000)
   }
   catch (err) {
-    vscode.window.showErrorMessage('Could not read folder recursively')
+    vscode.window.showErrorMessage('无法递归读取文件夹')
   }
 }
 
@@ -136,10 +136,10 @@ export function activate(context: vscode.ExtensionContext) {
       const content = `${prompt}\n${await copyContent(files, withoutComments)}\n${prompt}`
 
       await vscode.env.clipboard.writeText(content)
-      vscode.window.setStatusBarMessage(`Folder content copied to clipboard${prompt ? ' with prompt' : ''}!`, 5000)
+      vscode.window.setStatusBarMessage(`已成功将文件夹内容${prompt ? '(带提示)' : ''}复制到剪贴板!`, 5000)
     }
     catch (err) {
-      vscode.window.showErrorMessage('Could not read folder')
+      vscode.window.showErrorMessage('无法读取文件夹')
     }
   }
 
@@ -148,7 +148,7 @@ export function activate(context: vscode.ExtensionContext) {
       filesCollection.push(file.fsPath)
     }
     catch (err) {
-      vscode.window.showErrorMessage('Could not read file')
+      vscode.window.showErrorMessage('无法读取文件')
     }
   }
 
@@ -156,20 +156,20 @@ export function activate(context: vscode.ExtensionContext) {
     await addToCollection(file)
     const content = await copyContent(filesCollection)
     await vscode.env.clipboard.writeText(content)
-    vscode.window.setStatusBarMessage(`File added to collection and copied to clipboard!`, 5000)
+    vscode.window.setStatusBarMessage(`已将文件添加到集合并复制到剪贴板!`, 5000)
   }
 
   const newCollectionAndAdd = async (file: vscode.Uri) => {
     filesCollection = []
     await addToCollection(file)
-    vscode.window.setStatusBarMessage(`New collection started with file!`, 5000)
+    vscode.window.setStatusBarMessage(`已创建新集合并添加文件!`, 5000)
   }
 
   const copyCollectionAndClear = async () => {
     const content = await copyContent(filesCollection)
     await vscode.env.clipboard.writeText(content)
-    filesCollection = [] // Clear the collection
-    vscode.window.setStatusBarMessage(`Collection copied to clipboard and cleared!`, 5000)
+    filesCollection = [] // 清空集合
+    vscode.window.setStatusBarMessage(`已将集合内容复制到剪贴板并清空集合!`, 5000)
   }
 
   const disposable = vscode.commands.registerCommand('extension.copyFolderContent', folder => copyFolderContent(folder, '', false))
@@ -180,7 +180,7 @@ export function activate(context: vscode.ExtensionContext) {
   const disposableWithoutComments = vscode.commands.registerCommand('extension.copyFolderContentWithoutComments', folder => copyFolderContent(folder, '', true))
   const disposableAddToCollection = vscode.commands.registerCommand('extension.addToCollection', async (file) => {
     await addToCollection(file)
-    vscode.window.setStatusBarMessage(`File added to collection!`, 5000)
+    vscode.window.setStatusBarMessage(`已将文件添加到集合!`, 5000)
   })
   const disposableAddToCollectionAndCopy = vscode.commands.registerCommand('extension.addToCollectionAndCopy', addToCollectionAndCopy)
   const disposableNewCollectionAndAdd = vscode.commands.registerCommand('extension.newCollectionAndAdd', newCollectionAndAdd)
