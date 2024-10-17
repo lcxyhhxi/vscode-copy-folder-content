@@ -1,44 +1,44 @@
-# 📂 Copy Folder Content: AI Prompt Made Easy
+# 📂 复制文件夹内容：轻松创建AI提示
 
-This Visual Studio Code (VSCode) extension empowers you to effortlessly copy the content of any selected folder or file to your clipboard, offering customizable options for developers, content creators, and educators.
+这个Visual Studio Code (VSCode)扩展使您能够轻松地将任何选定文件夹或文件的内容复制到剪贴板，为开发者、内容创作者和教育工作者提供可定制的选项。
 
-## Key Use Cases:
+## 主要用例：
 
-1. **Front-end Development**: Aggregate HTML, JS, CSS, and more into your clipboard.
-2. **VSCode Extension Development**: Easily select and copy key files like `extension.ts`, `package.json`.
-3. **Project Configuration**: Copy `package.json`, `tsconfig`, and more in a single action.
+1. **前端开发**：将HTML、JS、CSS等聚合到剪贴板中。
+2. **VSCode扩展开发**：轻松选择并复制关键文件，如`extension.ts`、`package.json`。
+3. **项目配置**：一次性复制`package.json`、`tsconfig`等文件。
 
-### Folder Commands
+### 文件夹命令
 
-- **Copy Folder Content**: Include all files in the selected folder.
-- **Copy with Prompt**: Add a user-defined prompt.
-- **Copy Without Comments**: Exclude comments from copied content.
-- **Recursive Copy**: Recursively copy all files from the folder and its subfolders.
+- **复制文件夹内容**：包含选定文件夹中的所有文件。
+- **带提示复制**：添加用户自定义提示。
+- **无注释复制**：从复制的内容中排除注释。
+- **递归复制**：递归复制文件夹及其子文件夹中的所有文件。
 
-### File Commands
+### 文件命令
 
-- **Create File Collection**: Add individual files, copy the collection, and manage with ease.
+- **创建文件集合**：添加单个文件，复制集合，并轻松管理。
 
-## Easy Usage 🖱️
+## 简单使用 🖱️
 
-### Folder Operations:
+### 文件夹操作：
 
-- Right-click your desired folder in the Explorer panel.
-- Choose your preferred copying option.
-- Copy with or without a prompt or comments.
-- Clipboard now holds your content!
+- 在资源管理器面板中右键单击您想要的文件夹。
+- 选择您喜欢的复制选项。
+- 选择是否带提示或注释复制。
+- 剪贴板现在包含您的内容！
 
-### File Operations:
+### 文件操作：
 
-- Manage individual files or entire collections.
-- Right-click on files to add, copy, or start new collections.
+- 管理单个文件或整个集合。
+- 右键单击文件以添加、复制或开始新的集合。
 
-## Collaborate and Contribute 🤝
+## 协作与贡献 🤝
 
-Pull requests are welcome, and for significant changes, please open an issue for discussion.
+欢迎提交拉取请求，对于重大更改，请先开启一个问题进行讨论。
 
-## License 📄
+## 许可证 📄
 
 MIT
 
-Enjoy! 🎉
+享受使用！🎉
