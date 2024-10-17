@@ -20,19 +20,19 @@
     "commands": [
       {
         "command": "extension.copyFolderContent",
-        "title": "Copy Folder Content"
+        "title": "复制文件夹内容"
       },
       {
         "command": "extension.copyFolderContentWithPrompt",
-        "title": "Copy Folder Content With Prompt"
+        "title": "复制文件夹内容（带提示）"
       },
       {
         "command": "extension.copyFolderContentWithoutComments",
-        "title": "Copy Folder Content Without Comments"
+        "title": "复制文件夹内容（不含注释）"
       },
       {
         "command": "extension.copyFolderContentRecursively",
-        "title": "Recursively Copy Folder Content"
+        "title": "递归复制文件夹内容"
       },
       {
         "command": "extension.copyFolderContentRecursivelyByType",
@@ -40,19 +40,19 @@
       },
       {
         "command": "extension.newCollectionAndAdd",
-        "title": "Start New Collection with File"
+        "title": "用文件开始新集合"
       },
       {
         "command": "extension.addToCollection",
-        "title": "Add File to Collection"
+        "title": "将文件添加到集合"
       },
       {
         "command": "extension.addToCollectionAndCopy",
-        "title": "Add File to Collection and Copy"
+        "title": "将文件添加到集合并复制"
       },
       {
         "command": "extension.copyCollectionAndClear",
-        "title": "Copy Collection and Clear"
+        "title": "复制集合并清空"
       }
     ],
     "menus": {
